@@ -450,4 +450,32 @@ Thank you"</p>
             WhatsApp
         </a>
 </nav>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const tabs = document.querySelectorAll('nav a[href^="#"]');
+  const sections = ['about', 'infrastructure', 'practices', 'gallery'];
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const id = entry.target.id;
+        tabs.forEach(tab => {
+          if (tab.getAttribute('href') === '#' + id) {
+            tab.classList.add('text-emerald-700', 'dark:text-emerald-300', 'border-b-2', 'border-emerald-700', 'dark:border-emerald-300', 'pb-1');
+            tab.classList.remove('text-emerald-900/70', 'dark:text-emerald-50/70', 'hover:text-emerald-950', 'dark:hover:text-white');
+          } else {
+            tab.classList.remove('text-emerald-700', 'dark:text-emerald-300', 'border-b-2', 'border-emerald-700', 'dark:border-emerald-300', 'pb-1');
+            tab.classList.add('text-emerald-900/70', 'dark:text-emerald-50/70', 'hover:text-emerald-950', 'dark:hover:text-white');
+          }
+        });
+      }
+    });
+  }, { threshold: 0.3 });
+
+  sections.forEach(id => {
+    const section = document.getElementById(id);
+    if (section) observer.observe(section);
+  });
+});
+</script>
 </body></html>
