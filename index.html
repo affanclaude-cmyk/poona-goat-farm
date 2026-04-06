@@ -94,13 +94,23 @@
             font-family: 'Inter', sans-serif;
             background-color: #f8faf8;
             color: #191c1b;
+            overflow-x: hidden;
+        }
+        *, *::before, *::after {
+            box-sizing: border-box;
+        }
+        html {
+            overflow-x: hidden;
+        }
+        img {
+            max-width: 100%;
         }
         h1, h2, h3, h4 {
             font-family: 'Manrope', sans-serif;
         }
     </style>
 </head>
-<body class="overflow-x-hidden max-w-screen">
+<body class="overflow-x-hidden">
 <!-- TopAppBar -->
 <nav class="fixed top-0 w-full z-50 bg-surface/80 dark:bg-primary/80 backdrop-blur-md shadow-[0_32px_32px_-4px_rgba(1,45,29,0.06)]">
 <div class="flex justify-between items-center max-w-7xl mx-auto px-6 py-4">
@@ -120,9 +130,9 @@
 </div>
 </nav>
 <!-- Hero Section -->
-<header class="relative w-full h-[60vh] md:h-[921px] flex items-center overflow-hidden flex-shrink-0">
-<div class="absolute inset-0 z-0">
-<img alt="Premium Goat Farm" class="w-full h-full object-cover min-h-0" data-alt="expansive view of a modern sustainable goat farm at sunrise with golden light hitting the green pastures and clean white barns" src="images/hero.png"/>
+<header class="relative w-full md:h-[921px] flex items-center overflow-hidden flex-shrink-0">
+<div class="absolute inset-0 z-0 overflow-hidden">
+<img alt="Premium Goat Farm" class="w-full h-full object-cover" data-alt="expansive view of a modern sustainable goat farm at sunrise with golden light hitting the green pastures and clean white barns" src="images/hero.png"/>
 <div class="absolute inset-0 bg-gradient-to-r from-primary/90 via-primary/60 to-transparent"></div>
 </div>
 <div class="relative z-10 max-w-7xl mx-auto px-6 pt-20">
@@ -139,7 +149,7 @@
 </div>
 </header>
 <!-- About Section -->
-<section class="py-24 bg-surface-container-low" id="about">
+<section class="py-24 bg-surface-container-low overflow-hidden" id="about">
 <div class="max-w-7xl mx-auto px-6">
 <div class="grid lg:grid-cols-2 gap-16 items-center">
 <div class="relative">
@@ -178,7 +188,7 @@
 </div>
 </section>
 <!-- Infrastructure Grid -->
-<section class="py-24 bg-surface" id="infrastructure">
+<section class="py-24 bg-surface overflow-hidden" id="infrastructure">
 <div class="max-w-7xl mx-auto px-6">
 <div class="text-center max-w-3xl mx-auto mb-16">
 <h2 class="text-4xl font-extrabold text-primary mb-4">Farm Infrastructure</h2>
@@ -226,19 +236,19 @@
 <h2 class="text-4xl font-extrabold mb-16 text-center lg:text-left">Our Ethical Practices</h2>
 <div class="flex flex-col lg:flex-row gap-8">
 <!-- Practice Card 1 -->
-<div class="flex-1 bg-white/5 backdrop-blur-md rounded-lg p-10 border border-white/10 hover:bg-white/10 transition-colors">
+<div class="flex-1 bg-white/5 backdrop-blur-md rounded-lg p-6 md:p-10 border border-white/10 hover:bg-white/10 transition-colors">
 <span class="material-symbols-outlined text-secondary-fixed text-4xl mb-6">eco</span>
 <h3 class="text-2xl font-bold mb-4">100% Organic Diet</h3>
 <p class="text-emerald-50/70 leading-relaxed">We grow our own green fodder and maintain a strictly organic supplementation program with no hormones.</p>
 </div>
 <!-- Practice Card 2 -->
-<div class="flex-1 bg-white/5 backdrop-blur-md rounded-lg p-10 border border-white/10 hover:bg-white/10 transition-colors">
+<div class="flex-1 bg-white/5 backdrop-blur-md rounded-lg p-6 md:p-10 border border-white/10 hover:bg-white/10 transition-colors">
 <span class="material-symbols-outlined text-secondary-fixed text-4xl mb-6">health_and_safety</span>
 <h3 class="text-2xl font-bold mb-4">Zero-Stress Policy</h3>
 <p class="text-emerald-50/70 leading-relaxed">Minimal confinement and herd-based socialization ensure our goats grow up healthy and stress-free.</p>
 </div>
 <!-- Practice Card 3 -->
-<div class="flex-1 bg-white/5 backdrop-blur-md rounded-lg p-10 border border-white/10 hover:bg-white/10 transition-colors">
+<div class="flex-1 bg-white/5 backdrop-blur-md rounded-lg p-6 md:p-10 border border-white/10 hover:bg-white/10 transition-colors">
 <span class="material-symbols-outlined text-secondary-fixed text-4xl mb-6">biotech</span>
 <h3 class="text-2xl font-bold mb-4">Vaccination Protocol</h3>
 <p class="text-emerald-50/70 leading-relaxed">Strict adherence to national veterinary schedules ensuring disease-free livestock all year round.</p>
@@ -247,15 +257,15 @@
 </div>
 <!-- Decorative texture background -->
 <div class="absolute inset-0 opacity-10 pointer-events-none">
-<div class="absolute top-0 left-0 w-96 h-96 bg-secondary-fixed-dim blur-full rounded-full -translate-x-1/2 -translate-y-1/2"></div>
+<div class="absolute top-0 left-0 w-64 md:w-96 h-64 md:h-96 bg-secondary-fixed-dim blur-full rounded-full -translate-x-1/2 -translate-y-1/2"></div>
 </div>
 </section>
 <!-- Why Choose Us -->
-<section class="py-24 bg-surface-container-low">
+<section class="py-24 bg-surface-container-low overflow-hidden" id="why-choose-us">
 <div class="max-w-7xl mx-auto px-6">
 <div class="flex flex-col lg:flex-row gap-16 items-center">
-<div class="lg:w-1/2">
-<img alt="Farm Details" class="rounded-lg forest-shadow" data-alt="overhead view of high-quality organic grain mix and green grass used for goat feed, professional lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB0wajojVfatIWbIfFUO9oPHkYDDefuZFI4DBz5xb2rVulfh3tX_tcdb0SaqopTHpW4b33uWTBcpPiS3B-Sb8MSYSFIP1dF63T0OQBo8IQ_rymyzbqVP0ohiYwf5qh9Vl09ak5FY71TL6SIuAvoswVuP0iXoTiaRaxNJHeLL9oM1fu26wPOLFFlIl4_zYeAAOyR5a2fjobVRFiF9goyOo_-KlXGme-hyy1R5fbC5CwCwLpm-Ha2YFoqEP-HtqrK1PX8Qf45r65tqxQ"/>
+<div class="lg:w-1/2 w-full aspect-video overflow-hidden rounded-lg min-w-0">
+<img alt="Farm Details" class="w-full h-full object-cover rounded-lg forest-shadow" data-alt="overhead view of high-quality organic grain mix and green grass used for goat feed, professional lighting" src="images/distance_view.png"/>
 </div>
 <div class="lg:w-1/2 space-y-10">
 <h2 class="text-4xl font-extrabold text-primary">Why Choose Us?</h2>
@@ -282,7 +292,7 @@
 </div>
 </section>
 <!-- Gallery Section -->
-<section class="py-24 bg-surface" id="gallery">
+<section class="py-24 bg-surface overflow-hidden" id="gallery">
 <div class="max-w-7xl mx-auto px-6">
 <h2 class="text-4xl font-extrabold text-primary mb-16 text-center">Life At Poona Farm</h2>
 <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
@@ -350,7 +360,7 @@
 <div class="max-w-7xl mx-auto px-6">
 <div class="bg-surface-container-lowest rounded-lg forest-shadow overflow-hidden">
 <div class="flex flex-col lg:flex-row">
-<div class="lg:w-1/2 p-12 lg:p-20 bg-primary text-white">
+<div class="lg:w-1/2 p-8 md:p-12 lg:p-20 bg-primary text-white">
 <h2 class="text-4xl font-extrabold mb-8">Visit Our Farm</h2>
 <p class="text-emerald-100/70 mb-12 text-lg">We welcome visitors for farm tours and selection by appointment. Experience our practices first-hand.</p>
 <div class="space-y-8">
@@ -395,7 +405,7 @@
 </section>
 <!-- Footer -->
 <footer class="bg-emerald-950 dark:bg-black text-emerald-100 w-full py-16">
-<div class="grid grid-cols-1 md:grid-cols-4 gap-12 max-w-7xl mx-auto px-8">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-8 md:gap-12 max-w-7xl mx-auto px-6 md:px-8">
 <div class="col-span-1 md:col-span-1">
 <span class="text-xl font-bold text-white mb-4 block font-['Manrope']">Poona Goat Farm</span>
 <p class="font-['Inter'] text-sm leading-relaxed opacity-60">
